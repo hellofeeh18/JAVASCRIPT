@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(132, 142, 231);
+            color: rgb(21, 3, 80);
+            padding: 10px;
+            text-align: center;
+        }
+
+        h2{
+            color: blue;
+            text-align: center;
+        }
+
+        .box label{
+          font-size: 12px;
+          display: block;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="box">
+        <h3>T A B U A D A </h3>
+        <label for="numero">Insira um número</label>
+        <input type="number" id="numero">
+        <button onclick="calcularTabuada()" >Ver Tabuada</button>
+
+        <div id="tabuada">
+
+            <p> Tabuada não carrega...</p>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function calcularTabuada(){
+
+            const numero = parseInt(document.getElementById('numero').value);
+            const divTabuada = document.getElementById('tabuada');
+
+            divTabuada.innerHTML ='';
+    
+            for(let cont=1; cont<=10 ; cont++){
+            let resultado = numero * cont;
+
+            divTabuada.innerHTML += `<p>${numero} x ${cont} = ${resultado} </p>`;
+
+            
+        }
+
+        }
+    </script>
+    
+</body>
+</html>
